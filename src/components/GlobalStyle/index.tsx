@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
+import 'react-toastify/dist/ReactToastify.css';
 
 import variables, { breakpoints } from '@/configs/css-variables';
 
@@ -26,6 +27,10 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.8;
     font-family: Helvetica, Aria, sans-serif;
     font-size: 1.6rem;
+  }
+
+  a {
+    text-decoration: none;
   }
 
   .container {
