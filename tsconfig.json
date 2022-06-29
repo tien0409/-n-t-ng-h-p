@@ -23,5 +23,10 @@
   "include": [
     "src"
   ],
+  "plugins": [
+    {
+      "name": "typescript-styled-plugin"
+    }
+  ],
   "extends": "./tsconfig.paths.json"
 }
