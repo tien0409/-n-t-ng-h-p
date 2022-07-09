@@ -7,6 +7,7 @@ export const colorVariables = {
 
 export const heightVariables = {
   '--header-height': '70px',
+  '--height-topic-list': '35px'
 };
 
 export const breakpoints = {

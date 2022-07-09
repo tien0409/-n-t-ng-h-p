@@ -1,15 +1,43 @@
 import { ReactNode } from 'react';
-import Header from './Header';
+import {ToastContainer} from 'react-toastify';
+
+import {
+  Wrapper,
+  Main,
+  NavigationWrapper,
+  AsideWrapper,
+  MainContent,
+} from './styles/default';
+import { Navigation, Aside } from '@/components';
 
 type Props = {
-  children?: ReactNode;
+  NavigationComp?: () => JSX.Element;
+  RelatedComp?: () => JSX.Element;
+  children: ReactNode;
 };
 
-export default function DefaultLayout({ children }: Props) {
+const DefaultLayout = ({
+  NavigationComp = Navigation,
+  RelatedComp = Aside,
+  children,
+}: Props) => {
   return (
-    <>
-      <Header />
-      {children}
-    </>
+    <Wrapper className="container">
+
+      <ToastContainer />
+      <NavigationWrapper>
+        <NavigationComp />
+      </NavigationWrapper>
+
+      <Main>
+        <MainContent>{children}</MainContent>
+      </Main>
+
+      <AsideWrapper>
+        <RelatedComp />
+      </AsideWrapper>
+    </Wrapper>
   );
-}
+};
+
+export default DefaultLayout;
